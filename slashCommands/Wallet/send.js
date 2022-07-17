@@ -23,18 +23,20 @@ module.exports = {
     run: async (client, interaction) => {
 const Arweave = require("arweave")
 const wait = require('node:timers/promises').setTimeout;
+        // Инициализация arweave
         const arweave = Arweave.init({
             host: 'arweave.net',
             port: 443,
             protocol: 'https'
           });
-          
+          // Транзакция
 let key = await arweave.wallets.generate();
 let transaction = await arweave.createTransaction({
     target: interaction.options.getString("target"),
     quantity: arweave.ar.arToWinston(interaction.options.getNumber("amount"))
 }, key);
-
+        
+// Отправка транзакции в ЛС и лимит на выполнение 4 секунды команды
 await interaction.deferReply({wait: 4000, ephemeral: true});
 client.users.fetch(interaction.user.id).then((user) => {
     user.send({ files: [{attachment: new Buffer.from(JSON.stringify(key)), name: `Transaction.json`}], content: `Файл с Вашей транзакцией на сумму ${interaction.options.getNumber("amount")} AR на адрес ${interaction.options.getString("target")}`});	
