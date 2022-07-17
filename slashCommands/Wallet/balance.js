@@ -15,7 +15,7 @@ module.exports = {
     run: async (client, interaction) => {
 const Arweave = require("arweave")
 const wait = require('node:timers/promises').setTimeout
-        // Инициализация arweave
+        // Инициализация arweave 
         const arweave = Arweave.init({
             host: 'arweave.net',
             port: 443,
