@@ -1,0 +1,19 @@
+{
+  "name": "ArLet",
+  "version": "1.0.0",
+  "description": "Crypto AR bot",
+  "main": "index.js",
+  "author": "Alexcitten#0001",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "arweave": "^1.10.23",
+    "chalk": "^4.1.2",
+    "discord.js": "^13.6.0",
+    "fs": "^0.0.1-security",
+    "util": "^0.12.4"
+  }
+}
