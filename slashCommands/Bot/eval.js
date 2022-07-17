@@ -48,7 +48,7 @@ if(!owners.includes(interaction.user.id)) return interaction.reply({content: 'Э
     function clean(text) {
         return text
             .replace(/`/g, "`" + String.fromCharCode(8203))
-            .replace(/@/g, "@" + String.fromCharCode(8203)); // 477733320583544838
+            .replace(/@/g, "@" + String.fromCharCode(8203));
 }
     }
 }
