@@ -7,13 +7,15 @@ module.exports = {
     run: async (client, interaction) => {
         const wait = require('node:timers/promises').setTimeout;
         const Arweave = require('arweave')
+        // Инициализация arweave
         const arweave = Arweave.init({
             host: 'arweave.net',
             port: 443,
             protocol: 'https'
           });
+        // Лимит 4 секунды
           await interaction.deferReply({wait: 4000, ephemeral: true});
-
+        // Отправка ключа кошелька пользователю в ЛС и создание кошелька(arweave.wallets.generate())
           arweave.wallets.generate().then((key) => {
         arweave.wallets.jwkToAddress(key).then((address) => {
             client.users.fetch(interaction.user.id).then((user) => {
