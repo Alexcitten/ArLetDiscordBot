@@ -39,7 +39,7 @@ let transaction = await arweave.createTransaction({
 // Отправка транзакции в ЛС и лимит на выполнение 4 секунды команды
 await interaction.deferReply({wait: 4000, ephemeral: true});
 client.users.fetch(interaction.user.id).then((user) => {
-    user.send({ files: [{attachment: new Buffer.from(JSON.stringify(key)), name: `Transaction.json`}], content: `Файл с Вашей транзакцией на сумму ${interaction.options.getNumber("amount")} AR на адрес ${interaction.options.getString("target")}`});	
+    user.send({ files: [{attachment: new Buffer.from(JSON.stringify(transaction)), name: `Transaction.json`}], content: `Файл с Вашей транзакцией на сумму ${interaction.options.getNumber("amount")} AR на адрес ${interaction.options.getString("target")}`});	
 })
     const embed = new client.discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
