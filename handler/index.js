@@ -14,7 +14,12 @@ const loadEvents = async function (client) {
             if (event.name) {
                 console.log(chalk.bgBlueBright.black(` ✔️ => Ивент ${file} загружен`));
             } else {
-                console.log(chalk.bgRedBright.black(` ❌ => Ивент ${file} не загружен, ибо отсутствует help.name или help.name отсутствует в строке `));
+                console.log(
+                    chalk.bgRedBright.black(
+                        ` ❌ => Ивент ${file} не загружен, ` +
+                        `ибо отсутствует help.name или help.name отсутствует в строке`
+                    )
+                );
                 continue;
             }
             
@@ -44,7 +49,12 @@ const loadSlashCommands = async function (client) {
                 slash.push(command)
                 console.log(chalk.bgBlueBright.black(` ✔️ => Слеш-команда ${file} загружена`));
             } else {
-                console.log(chalk.bgRedBright.black(` ❌ => Слеш-команда ${file} не загружена, ибо отсутствует help.name или help.name отсутствует в строке`));
+                console.log(
+                    chalk.bgRedBright.black(
+                        ` ❌ => Слеш-команда ${file} не загружена,` +
+                           `ибо отсутствует help.name или help.name отсутствует в строке`
+                    )
+                );
                 continue;
             }
         }
