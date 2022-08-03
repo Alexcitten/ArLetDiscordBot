@@ -1,3 +1,6 @@
+const Arweave = require("arweave")
+const wait = require('node:timers/promises').setTimeout;
+
 module.exports = {
     name: "send",
     usage: "/send <address> <amount>",
@@ -21,26 +24,28 @@ module.exports = {
     description: "Перевести AR на кошелёк",
     ownerOnly: false,
     run: async (client, interaction) => {
-const Arweave = require("arweave")
-const wait = require('node:timers/promises').setTimeout;
-        // Инициализация arweave
+
         const arweave = Arweave.init({
             host: 'arweave.net',
             port: 443,
             protocol: 'https'
-          });
-          // Транзакция
+        });
+
 let key = await arweave.wallets.generate();
 let transaction = await arweave.createTransaction({
     target: interaction.options.getString("target"),
     quantity: arweave.ar.arToWinston(interaction.options.getNumber("amount"))
 }, key);
         
-// Отправка транзакции в ЛС и лимит на выполнение 4 секунды команды
 await interaction.deferReply({wait: 4000, ephemeral: true});
+        
 client.users.fetch(interaction.user.id).then((user) => {
-    user.send({ files: [{attachment: new Buffer.from(JSON.stringify(transaction)), name: `Transaction.json`}], content: `Файл с Вашей транзакцией на сумму ${interaction.options.getNumber("amount")} AR на адрес ${interaction.options.getString("target")}`});	
+    user.send({ 
+        files: [{attachment: new Buffer.from(JSON.stringify(transaction)), 
+            name: `Transaction.json`}], 
+              content: `Файл с Вашей транзакцией на сумму ${interaction.options.getNumber("amount")} AR на адрес ${interaction.options.getString("target")}`});	
 })
+        
     const embed = new client.discord.MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
         .setAuthor('Успешно!', 'https://cdn.discordapp.com/emojis/972516343247151285.webp?size=96&quality=lossless')
@@ -48,6 +53,11 @@ client.users.fetch(interaction.user.id).then((user) => {
         .addField("**Количество AR**", `${interaction.options.getNumber("amount")}`)
         .setColor('ORANGE')
         .setFooter({ text: `Я выслал Вам файл с Вашей транзакцией.`, iconURL: `${client.user.displayAvatarURL()}` });
-    return interaction.editReply({ files: [{attachment: new Buffer.from(JSON.stringify(transaction)), name: `Transaction.json`}], embeds: [embed], ephemeral: true});	
-},
+    return interaction.editReply({ 
+        files: [{attachment: new Buffer.from(JSON.stringify(transaction)),
+        name: `Transaction.json`}],
+        embeds: [embed],
+        ephemeral: true
+    });	
+  },
 };
