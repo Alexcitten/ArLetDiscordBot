@@ -38,8 +38,10 @@ module.exports = {
         return interaction.editReply({ 
                 files: [{attachment: new Buffer.from(JSON.stringify(key)), 
                 name: `${address}.json`}], 
-                embeds: [embed], ephemeral: true});     
-        });
-     });
-   },
+                embeds: [embed], 
+                ephemeral: true
+        });     
+      });
+    });
+  },
 };
