@@ -1,3 +1,6 @@
+const wait = require('node:timers/promises').setTimeout;
+const Arweave = require('arweave')
+        
 module.exports = {
     name: "createwallet",
     category: "Wallet",
@@ -5,21 +8,22 @@ module.exports = {
     description: "Создать AR-кошелёк",
     ownerOnly: false,
     run: async (client, interaction) => {
-        const wait = require('node:timers/promises').setTimeout;
-        const Arweave = require('arweave')
-        // Инициализация arweave
+
         const arweave = Arweave.init({
             host: 'arweave.net',
             port: 443,
             protocol: 'https'
           });
-        // Лимит 4 секунды
+
           await interaction.deferReply({wait: 4000, ephemeral: true});
-        // Отправка ключа кошелька пользователю в ЛС и создание кошелька(arweave.wallets.generate())
-          arweave.wallets.generate().then((key) => {
-        arweave.wallets.jwkToAddress(key).then((address) => {
-            client.users.fetch(interaction.user.id).then((user) => {
-                user.send({ files: [{attachment: new Buffer.from(JSON.stringify(key)), name: `${address}.json`}], content: `Ваш приватный ключ arweave от кошелька ${address}`});	
+
+        arweave.wallets.generate().then((key) => {
+            arweave.wallets.jwkToAddress(key).then((address) => {
+                client.users.fetch(interaction.user.id).then((user) => {
+                    user.send({ 
+                        files: [{attachment: new Buffer.from(JSON.stringify(key)), 
+                            name: `${address}.json`}], 
+                              content: `Ваш приватный ключ arweave от кошелька ${address}`});	
             })
 
         const embed = new client.discord.MessageEmbed()
@@ -31,8 +35,11 @@ module.exports = {
             .setColor('GREEN')
             .setThumbnail('https://cdn.discordapp.com/attachments/972381539784601654/972451607134470214/arlet.png')
             .setFooter({ text: `Администрация никогда не попросит Ваш ключ. Ключ нужен для входа в кошелёк`, iconURL: `${client.user.displayAvatarURL()}` });
-            return interaction.editReply({ files: [{attachment: new Buffer.from(JSON.stringify(key)), name: `${address}.json`}], embeds: [embed], ephemeral: true});     
-    });
-});
-},
+        return interaction.editReply({ 
+                files: [{attachment: new Buffer.from(JSON.stringify(key)), 
+                name: `${address}.json`}], 
+                embeds: [embed], ephemeral: true});     
+        });
+     });
+   },
 };
