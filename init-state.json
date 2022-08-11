@@ -1,0 +1,11 @@
+{
+    "ticker":"ANO",
+    "owner":"0000000000000000000000000000000000000000000",
+    "divisibility": 100000000000,
+   
+    "balances":{
+        "udOL7D7qkfFyfnkxfRQA0r1Eoz1-XRwUOSLfiCFee38": 320000000000000000000
+        
+    },
+    "governanceContract": "rmx6a8XAVgGhzmjaBAsgjkCUFTzfvR0eGqqYs7ILGew"
+}

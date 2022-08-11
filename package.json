@@ -1,0 +1,22 @@
+{
+  "name": "ArLet v2",
+  "version": "2.0.0",
+  "description": "Discord cryptocurrency bot.",
+  "main": "index.js",
+  "author": "Alexcitten",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "arweave": "^1.11.4",
+    "chalk": "^4.1.2",
+    "discord.js": "^14.2.0",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.6.1",
+    "redstone-api": "^0.4.11",
+    "redstone-smartweave": "^0.5.11",
+    "warp-contracts": "^1.1.14"
+  }
+}
