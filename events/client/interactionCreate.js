@@ -78,7 +78,7 @@ module.exports = {
             const embedRuHelp = new client.discord.EmbedBuilder()
         .setTitle(`Список команд`)
         .addFields([
-            {name: `<:donate:976853323342815262>  Кошелёк`, value: `❯ /createwallet - **Создать AR кошелёк**\n ❯ /balance <43-ёх символьный адрес кошелька AR> - **Просмотреть баланс**\n ❯ /arsend <43-ёх символьный адрес кошелька AR>, <количество AR>, <JSON Key File кошелька AR> - **Отправить AR**\n ❯ /anosend <43-ёх символьный адрес кошелька AR>, <количество ANO>, <JSON Key File кошелька AR> - **Отправить смарт-токен [another.money](https://another.money)`},
+            {name: `<:donate:976853323342815262>  Кошелёк`, value: `❯ /createwallet - **Создать AR кошелёк**\n ❯ /balance <43-ёх символьный адрес кошелька AR> - **Просмотреть баланс**\n ❯ /arsend <43-ёх символьный адрес кошелька AR>, <количество AR>, <JSON Key File кошелька AR> - **Отправить AR**\n ❯ /anosend <43-ёх символьный адрес кошелька AR>, <количество ANO>, <JSON Key File кошелька AR> - **Отправить смарт-токен [another.money](https://another.money)**`},
             {name: `<:addbot:976851455355015178>  Другое`, value: `❯ /help - **Список команд**\n ❯ /botinfo - **О боте**\n ❯ /invite - **Полезные ссылки**\n ❯ /arweave - **О Arweave**`}
         ])
         .setColor('#FF8747')
