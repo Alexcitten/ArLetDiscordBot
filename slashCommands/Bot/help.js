@@ -11,7 +11,7 @@ module.exports = {
         const embed = new EmbedBuilder()
         .setTitle(`Commands`)
         .addFields([
-            {name: `<:donate:976853323342815262>  Wallet`, value: `❯ /createwallet - **Create AR wallet**\n ❯ /balance <AR 43-symbol wallet address> - **Check balance**\n ❯ /arsend <AR 43-symbol wallet address>, <quantity AR>, <JSON Key File AR wallet> - **Send AR**\n ❯ /anosend <AR 43-symbol wallet address>, <quantity ANO>, <JSON Key File AR wallet> - **Send smart-token [another.money](https://another.money)**`},
+            {name: `<:donate:976853323342815262>  Wallet`, value: `❯ /createwallet - **Create AR wallet**\n ❯ /balance <AR 43-symbol wallet address> - **Check balance**\n ❯ /arsend <AR 43-symbol wallet address>, <quantity AR>, <JSON Key File AR wallet> - **Send AR**\n ❯ /ardrivesend <AR 43-symbol wallet address>, <quantity ANO>, <JSON Key File AR wallet> - **Send smart-token ArDrive**`},
             {name: `<:addbot:976851455355015178>  Other`, value: `❯ /help - **List commands**\n ❯ /botinfo - **About the bot**\n ❯ /invite - **Useful links**\n ❯ /arweave - **About Arweave**`}
         ])
         .setColor('#FF8747')
