@@ -29,7 +29,7 @@ module.exports = {
             await interaction.deferReply({ephemeral: true});
 
             const smartweave = WarpNodeFactory.memCached(arweave);
-                let txId = await smartweave.contract(config.anoContract).connect(jwk).viewState({
+                let txId = await smartweave.contract(config.ardriveContract).connect(jwk).viewState({
                     function: "balance",
                     target: interaction.options.getString("address")
                 })
@@ -37,7 +37,7 @@ module.exports = {
             arweave.wallets.getBalance(interaction.options.getString("address")).then((balance) => {
                 let ar = arweave.ar.winstonToAr(balance);
             
-            let anoQty = (typeof txId.result == "undefined" || !txId.result|| typeof txId.result.balance == "undefined" ? "Wallet is not defined \:D" : txId.result.balance) 
+            let ardQty = (typeof txId.result == "undefined" || !txId.result|| typeof txId.result.balance == "undefined" ? "Wallet is not defined \:D" : txId.result.balance) 
             if (isNaN(ar)) ar = `Wallet is not defined \:D`
             
         const embed = new EmbedBuilder()
@@ -45,11 +45,11 @@ module.exports = {
             .addFields([
                 {name: `Wallet`, value: `${interaction.options.getString("address")}`},
                 {name: `**AR**`, value: `${ar}`},
-                {name: `**ANO**`, value: `${anoQty}`}
+                {name: `**ArDrive(ↁ)**`, value: `${ardQty}`}
             ])
             .setColor('#FF8747')
             .setFooter({ 
-                text: `Check AR and smart-token ANO wallet balance.`, 
+                text: `Check AR and smart-token ArDrive wallet balance.`, 
                 iconURL: `${client.user.displayAvatarURL()}` 
             });
 
