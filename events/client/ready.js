@@ -1,11 +1,12 @@
-module.exports = {
+const { ActivityType } = require('discord.js')
+    module.exports = {
     name: 'ready',
     once: true,
 
     async execute(client) {
         client.user.setPresence({
-            name: "arweave.org",
-            status: "idle"
+          activities: [{ name: `/help`, type: ActivityType.Watching }],
+          status: 'idle',
         });
         
         console.log(`${client.user.tag} rise from the ashes \:O`);
