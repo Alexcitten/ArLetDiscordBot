@@ -5,8 +5,8 @@ const fetch = require('node-fetch');
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    name: "anosend",
-    usage: "/anosend <address> <amount> <wallet>",
+    name: "ardrivesend",
+    usage: "/ardivesend <address> <amount> <wallet>",
     options: [
         {
             name: 'target',
@@ -18,7 +18,7 @@ module.exports = {
             name: 'amount',
             minValue: '0.01',
             maxValue: '10000',
-            description: 'Quantity ANO',
+            description: 'Quantity ARDRIVE',
             type: ApplicationCommandOptionType.Number,
             required: true
         },
@@ -30,7 +30,7 @@ module.exports = {
         }
     ],
     category: "AR Wallet",
-    description: "Send smart-token ANO(Another Money)",
+    description: "Send smart-token ARDRIVE",
     ownerOnly: false,
     run: async (client, interaction, args) => {
 
@@ -48,7 +48,7 @@ module.exports = {
 
         const smartweave = SmartWeaveNodeFactory.memCached(arweave);
 
-          let txId = await smartweave.contract(config.anoContract).connect(JSON.parse(result.toString())).writeInteraction({
+          let txId = await smartweave.contract(config.ardriveContract).connect(JSON.parse(result.toString())).writeInteraction({
             function: "transfer",
             qty: interaction.options.getNumber("amount"),
             target: interaction.options.getString("target")
@@ -58,15 +58,15 @@ module.exports = {
     
     const embed = new EmbedBuilder()
         .setThumbnail('https://cdn.discordapp.com/attachments/991389953269452990/1006899537094385724/logo.png')
-        .setTitle('https://another.money')
+        .setTitle('Smart-token ArDrive')
         .setFields([
             {name: `To wallet`, value: `${interaction.options.getString("target")}`},
-            {name: `**Quantity ANO**`, value: `${interaction.options.getNumber("amount")}`},
+            {name: `**Quantity ARDRIVE**`, value: `${interaction.options.getNumber("amount")}`},
             {name: `**Transaction ID**`, value: `${errNull}`}
         ])
         .setColor('#FF8747')
         .setFooter({ 
-            text: `Transaction smart-token Another Money`, 
+            text: `Transaction`, 
             iconURL: 'https://cdn.discordapp.com/attachments/991389953269452990/1006899537094385724/logo.png'
         });
       
