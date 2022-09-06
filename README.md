@@ -1,6 +1,6 @@
 # ArLet — Discord Bot
 
-This unusual Discord-boot is created for the Arweave Community, for ease of transactions of AR token and smart contracts based on Arweave (only ArDrive is now available) and other interactions, creating a semi-cold arweave wallet using a wallet.
+This unusual Discord-boot is created for the Arweave Community, for ease of transactions of AR token and smart contracts based on Arweave (only ArDrive is now available) and other interactions, creating a semi-cold arweave wallet, balance view
 
 This is far from all the functionality, because the bot was planned to be originally with extensive functionality, support for Bitcoin, Cosmos(ATOM), [HNS](https://hsd-dev.org/), and so on, also provide cryptocurrency electronic commerce: buying, selling, and bidding on any cryptogood. at Opensea API (and we already have the key to the API)
 
