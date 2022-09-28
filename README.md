@@ -33,7 +33,7 @@ npm install --save https://github.com/Alexcitten/ArLetDiscordBot
 ## Built With
 
 * [arweave](https://www.npmjs.com/package/arweave) - Interact with Arweave
-* [SmartWeave](https://academy.warp.cc/tutorials/elementary/smartweave) & [Warp Contrats](https://github.com/warp-contracts/warp) - Smart Contracts
+* [SmartWeave](https://academy.warp.cc/tutorials/elementary/smartweave) & [Warp Contracts](https://github.com/warp-contracts/warp) - Smart Contracts
 * [discord.js v14](https://discord.js.org/#/) - This is what most bots rely on.
 * [chalk](https://www.npmjs.com/package/chalk) - Just output to the console, beautiful.
 * [node-fetch](https://www.npmjs.com/package/node-fetch) - It is used in arsend & ardrivesend commands for Key File
