@@ -21,7 +21,20 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * OpenSea API; buying, selling, and bidding on any cryptogood.
 * Beautiful website
 
-
+## The closest functionality
+* Interactions with Cosmos(ATOM) cryptocurrency
+* A /command with a lot of information about decentralization, etc.
+* Cryptocurrency transfers by Discord Handle
+    ╰ /profile & /profile @User#0000 - Shows a person's profile, his wallets (which he connects himself if desired) and bio
+       ╰ /addbio - Add bio to /profile.
+         ╰ /arsenduser @User#0000 <quantity> <Key File.json> and other transfer commands
+           ╰ /gift <quantity> <Key File.json> - Send the desired amount to a random person who has connected their AR wallet
+* Checking for funds in transfer commands
+* Various clarifications and changes in Embed's design
+* Website with nice domain and new hosting
+#### All planned functionality will appear gradually
+         
+### [Help the bot! | $35/yearly | Nice domain for the website and bot hosting](https://alexcitten.diaka.ua/donate)
 ### Install
 
 I'm glad you wanted to download this.
