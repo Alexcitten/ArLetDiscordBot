@@ -24,7 +24,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 ## The closest functionality
 * Interactions with Cosmos(ATOM) cryptocurrency
 * A /command with a lot of information about decentralization, etc.
-* Cryptocurrency transfers by Discord Handle
+* Cryptocurrency transfers by Discord Handle<br>
     ╰ /profile & /profile @User#0000 - Shows a person's profile, his wallets (which he connects himself if desired) and bio
        ╰ /addbio - Add bio to /profile.
          ╰ /arsenduser @User#0000 <quantity> <Key File.json> and other transfer commands
