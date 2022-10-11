@@ -1,5 +1,5 @@
 const Arweave = require("arweave");
-const { SmartWeaveNodeFactory } = require("redstone-smartweave");
+const { WarpFactory } = require("warp-contracts");
 const config = require("../../config.json")
 const fetch = require('node-fetch');
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
@@ -34,19 +34,13 @@ module.exports = {
     ownerOnly: false,
     run: async (client, interaction, args) => {
 
-        const arweave = Arweave.init({
-            host: 'arweave.net',
-            port: 443,
-            protocol: 'https'
-          });
-
         await interaction.deferReply({ephemeral: true});
 
-        const anoWallet = interaction.options.getAttachment("wallet").url
+        const arWallet = interaction.options.getAttachment("wallet").url
 
-        fetch(anoWallet).then((res) => res.buffer()).then(async (result) => {
+        fetch(arWallet).then((res) => res.buffer()).then(async (result) => {
 
-        const smartweave = SmartWeaveNodeFactory.memCached(arweave);
+        const warp = WarpFactory.forMainnet();
 
           let txId = await smartweave.contract(config.ardriveContract).connect(JSON.parse(result.toString())).writeInteraction({
             function: "transfer",
