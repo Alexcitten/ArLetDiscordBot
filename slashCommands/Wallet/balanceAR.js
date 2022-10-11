@@ -1,5 +1,5 @@
 const Arweave = require("arweave")
-const { WarpNodeFactory } = require("warp-contracts");
+const { WarpFactory } = require("warp-contracts");
 const config = require("../../config.json")
 const jwk = require('../../jwk.json') // I don't care about this wallet.
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
@@ -28,8 +28,8 @@ module.exports = {
 
             await interaction.deferReply({ephemeral: true});
 
-            const smartweave = WarpNodeFactory.memCached(arweave);
-                let txId = await smartweave.contract(config.ardriveContract).connect(jwk).viewState({
+            const warp = WarpFactory.forMainnet();
+                let txId = await warp.contract(config.ardriveContract).connect(jwk).viewState({
                     function: "balance",
                     target: interaction.options.getString("address")
                 })
