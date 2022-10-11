@@ -35,7 +35,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * Website with nice domain and new hosting
 #### All planned functionality will appear gradually
          
-### [Help the bot! | $35/yearly | Nice domain for the website and bot hosting](https://alexcitten.diaka.ua/donate)
+### [Bot hosting ends on November 28, help him pay for hosting and buy a domain for the future site](https://alexcitten.diaka.ua/donate)
 ### Install
 
 I'm glad you wanted to download this.
