@@ -8,6 +8,7 @@ The purpose of the ArLet in Discord — open a new sphere of functionality with 
 As you know, the current functionality is far from the end! We want to go far as we can.
 
 #### Bot by Alexcitten#0001 | [Add Bot](https://discord.com/api/oauth2/authorize?client_id=631868778074079245&permissions=2147795968&scope=bot%20applications.commands)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Arlet%20Discord%20Bot%20For%20Interact%20With%20Cryptocurrency%27s&url=https://letcore.ml/arlet&hashtags=arweave,arweave%20discord,smartweave,discord%20bot,discord%20future,bitcoin%20discord,%20hns,cosmos%20atom,crypto,cryptocurrency)
 
 ## Getting Started
 
