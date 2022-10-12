@@ -28,8 +28,9 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * Cryptocurrency transfers by Discord Handle<br>
     ╰ /profile & /profile @User#0000 - Shows a person's profile, his wallets (which he connects himself if desired) and bio<br>
        ╰ /addbio - Add bio to /profile.<br>
-         ╰ /arsenduser @User#0000 <quantity> <Key File.json> and other transfer commands<br>
-           ╰ /gift <quantity> <Key File.json> - Send the desired amount to a random person who has connected their AR wallet<br>
+         ╰ /addarwallet - Connect AR wallet to your Discord profile
+           ╰ /arsenduser @User#0000 <quantity> <Key File.json> and other transfer commands<br>
+             ╰ /gift <quantity> <Key File.json> - Send the desired amount to a random person who has connected their AR wallet<br>
 * Checking for funds in transfer commands
 * Various clarifications and changes in Embed's design
 * Website with nice domain and new hosting
