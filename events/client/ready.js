@@ -5,7 +5,7 @@ const { ActivityType } = require('discord.js')
 
     async execute(client) {
         client.user.setPresence({
-          activities: [{ name: `/help`, type: ActivityType.Watching }],
+          activities: [{ name: `https://arlet.tech`, type: ActivityType.Watching }],
           status: 'idle',
         });
         
