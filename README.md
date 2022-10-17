@@ -19,7 +19,6 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * Finding the right information on [ArWiki](https://arwiki.wiki/#/en)
 * Support for BTC, [HNS](https://hsd-dev.org/), Cosmos(ATOM) and similar cryptocurrencies
 * OpenSea API; buying, selling, and bidding on any cryptogood.
-* Beautiful website
 
 ## The closest functionality
 * Interactions with Cosmos(ATOM) cryptocurrency
