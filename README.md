@@ -31,7 +31,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
              ╰ /gift <quantity> <Key File.json> - Send the desired amount to a random person who has connected their AR wallet<br>
 * Checking for funds in transfer commands
 * Various clarifications and changes in Embed's design
-* Website with nice domain and new hosting
+* New hosting
 #### All planned functionality will appear gradually
          
 ### [Bot hosting ends on November 28, help him pay for hosting](https://alexcitten.diaka.ua/donate)
