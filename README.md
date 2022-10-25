@@ -34,7 +34,6 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * New hosting
 #### All planned functionality will appear gradually
          
-### [Bot hosting ends on November 28, help him pay for hosting](https://alexcitten.diaka.ua/donate)
 ### Install
 
 I'm glad you wanted to download this.
