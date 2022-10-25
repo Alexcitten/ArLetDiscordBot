@@ -34,7 +34,7 @@ module.exports = {
                 {name: `<:WhatTheBot:976864462164361226>  What is bot?`, value: `It\'s made for [arweave community](https://discord.gg/9CXP2H7e5N), for ease of use arweave, and the bot has its own [Open Source](https://github.com/Alexcitten/ArLetDiscordBot).`},
                 {name: `<:peoples:976851868166787082>  Guilds`, value: `${client.guilds.cache.size}`},
                 {name: `<:time:976868189449375767>  Ping`, value: `${client.ws.ping}`},
-                {name: `<:donate:976853323342815262>  Other`, value: `Bot owner: Alexcitten#0001\n Discord.js v14.2.0\n Hosting: Heroku\n Used ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`}
+                {name: `<:donate:976853323342815262>  Other`, value: `Bot owner: Alexcitten#0001\n Discord.js v14.2.0\n Hosting: VDS\n Used ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`}
             ])
             .setColor('#FF8747')
             .setFooter({ 
