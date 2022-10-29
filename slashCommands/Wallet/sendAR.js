@@ -14,7 +14,7 @@ module.exports = {
         },
         {
             name: 'amount',
-            minValue: '0.5',
+            minValue: '0.0009',
             maxValue: '10000',
             description: 'Quantity AR',
             type: ApplicationCommandOptionType.Number,
