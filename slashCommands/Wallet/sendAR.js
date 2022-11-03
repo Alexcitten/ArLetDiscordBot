@@ -63,13 +63,14 @@ module.exports = {
     const embed = new EmbedBuilder()
         .setThumbnail(client.user.displayAvatarURL())
         .setTitle('Successfully!')
+        .setDescription(`[Transaction Hash\(SCAR\)](https://scar.pages.dev/#/tx/${transaction.id})`)
         .addFields([
             {name: `To wallet`, value: `${interaction.options.getString("target")}`}, 
             {name: `**Quantity AR**`, value: `${interaction.options.getNumber("amount")}`}
         ])
         .setColor('#FF8747')
         .setFooter({
-            text: `I sent you a file with you\'r AR transaction.`, 
+            text: `I sent you a file with your AR transaction.`, 
             iconURL: `${client.user.displayAvatarURL()}` 
         });
 
