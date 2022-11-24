@@ -32,6 +32,12 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * Checking for funds in transfer commands
 * Various clarifications and changes in Embed's design
 
+## Next update
+* Combing the code, changing the design
+* Checks for valid arguments in send commands
+* Embedding a small commission in send commands
+* [HandShake](https://hsd-dev.org/) functionality support
+
 #### All planned functionality will appear gradually
          
 ### Install
