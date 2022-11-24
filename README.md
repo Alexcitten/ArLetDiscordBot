@@ -45,7 +45,10 @@ This code is provided for study, and it is sitting right now in the present ArLe
 I'm glad you wanted to download this.
 
 ```
-npm install --save https://github.com/Alexcitten/ArLetDiscordBot
+# Clone the repository
+git clone https://github.com/Alexcitten/ArLetDiscordBot
+npm i
+node index.js
 ```
 
 ## Built With
