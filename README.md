@@ -33,10 +33,10 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * Various clarifications and changes in Embed's design
 
 ## Next update
-* Combing the code, changing the design
-* Checks for valid arguments in send commands
-* Embedding a small commission in send commands
-* [HandShake](https://hsd-dev.org/) functionality support
+* Combing the code, changing the design [35%]
+* Checks for valid arguments in send commands [0%]
+* Embedding a small commission in send commands [0%]
+* [HandShake](https://hsd-dev.org/) functionality support [0%]
 
 #### All planned functionality will appear gradually
          
