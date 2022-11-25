@@ -46,7 +46,7 @@ I'm glad you wanted to download this.
 
 ```
 # Clone the repository
-git clone https://github.com/Alexcitten/ArLetDiscordBot
+git clone https://github.com/Alexcitten/ArLetDiscordBot.git
 npm i
 node index.js
 ```
