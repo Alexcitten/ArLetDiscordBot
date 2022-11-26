@@ -1,4 +1,4 @@
-# ArLet — Discord Bot | 1450+ guilds
+# [ArLet — Discord Bot | 1450+ guilds](https://arlet.tech)
 
 This unusual Discord-bot is created for the Arweave Community, for ease of transactions of AR token and smart contracts based on Arweave and other interactions, creating a semi-cold arweave wallet, balance view and more!
 
