@@ -37,6 +37,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * Checks for valid arguments in send commands [0%]
 * Embedding a small commission in send commands [0%]
 * [HandShake](https://hsd-dev.org/) functionality support [0%]
+* Upload data to Arweave [0%]
 
 #### All planned functionality will appear gradually
          
