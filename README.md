@@ -34,7 +34,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * [Fully](https://github.com/jfbeats/ArweaveWalletConnectorNode) security using [arweave.app](https://arweave.app)
 
 ## Next update
-* Combing the code, changing the design [50%]
+* Combing the code, changing the design [70%]
 * Checks for valid arguments in send commands [0%]
 * Embedding a small commission in send commands [0%]
 * [HandShake](https://hsd-dev.org/) functionality support [0%]
