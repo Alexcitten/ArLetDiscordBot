@@ -30,15 +30,14 @@ This code is provided for study, and it is sitting right now in the present ArLe
            ╰ /arsenduser @User#0000 <quantity> <Key File.json> and other transfer commands<br>
              ╰ /gift <quantity> <Key File.json> - Send the desired amount to a random person who has connected their AR wallet<br>
 * Checking for funds in transfer commands
-* Various clarifications and changes in Embed's design
+* [HandShake](https://hsd-dev.org/) functionality support
+* Upload data to Arweave
 * [Fully](https://github.com/jfbeats/ArweaveWalletConnectorNode) security using [arweave.app](https://arweave.app)
 
 ## Next update
-* Combing the code, changing the design [70%]
-* Checks for valid arguments in send commands [0%]
-* Embedding a small commission in send commands [0%]
-* [HandShake](https://hsd-dev.org/) functionality support [0%]
-* Upload data to Arweave [0%]
+* Combing the code, changing the design [100%]
+* Checks for valid arguments in send commands [100%]
+WAITING 1-2 DAYS
 
 #### All planned functionality will appear gradually
          
