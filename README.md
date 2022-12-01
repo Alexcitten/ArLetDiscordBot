@@ -35,8 +35,11 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * [Fully](https://github.com/jfbeats/ArweaveWalletConnectorNode) security using [arweave.app](https://arweave.app)
 
 ## Next update
-* Combing the code, changing the design [100%]
+* Combing the code, changing the design and more [100%]
 * Checks for valid arguments in send commands [100%]
+* New website [100%]
+* New docs [20%]
+* New support server [50%]
 WAITING 1-2 DAYS
 
 #### All planned functionality will appear gradually
