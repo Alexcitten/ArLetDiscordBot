@@ -40,7 +40,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * New website [100%]
 * New docs [20%]
 * New support server [50%]
-WAITING 1-2 DAYS
+#### WAITING 1-2 DAYS
 
 #### All planned functionality will appear gradually
          
