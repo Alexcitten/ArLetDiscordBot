@@ -1,4 +1,3 @@
-const Arweave = require("arweave");
 const { WarpFactory } = require("warp-contracts");
 const config = require("../../config.json")
 const fetch = require('node-fetch');
@@ -6,11 +5,10 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: "ardrivesend",
-    usage: "/ardivesend <address> <amount> <wallet>",
     options: [
         {
             name: 'target',
-            description: 'AR wallet address',
+            description: 'AR Wallet Address',
             type: ApplicationCommandOptionType.String,
             required: true
         },
@@ -31,43 +29,66 @@ module.exports = {
     ],
     category: "AR Wallet",
     description: "Send smart-token ARDRIVE",
-    ownerOnly: false,
     run: async (client, interaction, args) => {
 
         await interaction.deferReply({ephemeral: true});
 
-        const arWallet = interaction.options.getAttachment("wallet").url
+        const keyUrl = interaction.options.getAttachment("wallet").url
+        const keyName = interaction.options.getAttachment("wallet").name
 
-        fetch(arWallet).then((res) => res.buffer()).then(async (result) => {
+        const ifName = keyName.split(".").pop();
+
+        if(interaction.options.getString("target").length !== 43) {
+            interaction.editReply({
+                content: `You need to enter the Arweave wallet address with a length of **43 characters**. [More about Arweave wallets](https://docs.arweave.org/info/wallets/arweave-wallet)`
+            })
+        } else {
+
+        if(ifName !== 'json') {
+            interaction.editReply({
+                content: `You need to enter the Arweave wallet keyfile with a .json extension. Your keyfiles don\'t go through third party processes, they are sent directly to Arweave. [More about Arweave wallets](https://docs.arweave.org/info/wallets/arweave-wallet)`
+            })
+        } else {
+
+        fetch(keyUrl).then((res) => res.buffer()).then(async (result) => {
 
         const warp = WarpFactory.forMainnet();
 
-          let txId = await smartweave.contract(config.ardriveContract).connect(JSON.parse(result.toString())).writeInteraction({
+        let txId = await warp.contract(config.ardriveContract).connect(JSON.parse(result.toString())).writeInteraction({
             function: "transfer",
             qty: interaction.options.getNumber("amount"),
             target: interaction.options.getString("target")
           })
 
-    let errNull = (typeof txId == "null" || !txId || typeof txId == "null" ? "Declined. Transaction error, maybe it's because of the zero balance. If you think it's not, please [tell us.](https://discord.gg/jNKWTx7AJp)" : txId) 
-    
+          client.users.fetch(interaction.user.id).then((user) => {  
+            user.send({ 
+                files: [{attachment: new Buffer.from(JSON.stringify(txId)), 
+                name: `TransactionArDrive.json`}], 
+                content: `File with your transaction for the amount \`${interaction.options.getNumber("amount")}\` ArDrive for wallet \`${interaction.options.getString("target")}\``});	
+        })
+
+        // what.
+          // let errNull = (typeof txId == "null" || !txId || typeof txId == "null" ? "Declined. Transaction error, maybe it's because of the zero balance. If you think it's not, please [tell us.](https://discord.gg/K4XvmHusSJ)" : txId)
     const embed = new EmbedBuilder()
-        .setThumbnail('https://cdn.discordapp.com/attachments/991389953269452990/1006899537094385724/logo.png')
-        .setTitle('Smart-token ArDrive')
-        .setFields([
-            {name: `To wallet`, value: `${interaction.options.getString("target")}`},
-            {name: `**Quantity ARDRIVE**`, value: `${interaction.options.getNumber("amount")}`},
-            {name: `**Transaction ID**`, value: `${errNull}`}
+        .setTitle('Successfully')
+        .addFields([
+            {name: `<:wallet:1047085806696808538>  To wallet`, value: `${interaction.options.getString("target")}`}, 
+            {name: `<:donate:1047492716474400798>  Quantity ArDrive`, value: `${interaction.options.getNumber("amount")}`},
+            {name: `<:q_:1045650172144783410>  Transaction`, value: `I sent you a transaction file in this message and private messages`}
         ])
         .setColor('#FF8747')
-        .setFooter({ 
-            text: `Transaction`, 
-            iconURL: 'https://cdn.discordapp.com/attachments/991389953269452990/1006899537094385724/logo.png'
+        .setFooter({
+            text: `ArDrive Transaction`, 
+            iconURL: `${client.user.displayAvatarURL()}` 
         });
-      
-    await interaction.editReply({
-         embeds: [embed], 
-         ephemeral: true
-    });	
-  })
+
+    return interaction.editReply({
+        files: [{attachment: new Buffer.from(JSON.stringify(txId)),
+        name: `TransactionArDrive.json`}], 
+        embeds: [embed]
+    });
+    })
+    } 
+   }
+  }
  }
-};
