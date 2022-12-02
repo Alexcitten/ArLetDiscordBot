@@ -29,18 +29,12 @@ This code is provided for study, and it is sitting right now in the present ArLe
          ╰ /addarwallet - Connect AR wallet to your Discord profile<br>
            ╰ /arsenduser @User#0000 <quantity> <Key File.json> and other transfer commands<br>
              ╰ /gift <quantity> <Key File.json> - Send the desired amount to a random person who has connected their AR wallet<br>
-* Checking for funds in transfer commands
-* [HandShake](https://hsd-dev.org/) functionality support
-* Upload data to Arweave
 * [Fully](https://github.com/jfbeats/ArweaveWalletConnectorNode) security using [arweave.app](https://arweave.app)
 
 ## Next update
-* Combing the code, changing the design and more [100%]
-* Checks for valid arguments in send commands [100%]
-* New website [100%]
-* New docs [20%]
-* New support server [50%]
-#### WAITING 1-2 DAYS
+* Upload data to Arweave
+* [HandShake](https://hsd-dev.org/) functionality support
+* Interact with [Stargaze](https://stargaze.zone)
 
 #### All planned functionality will appear gradually
          
