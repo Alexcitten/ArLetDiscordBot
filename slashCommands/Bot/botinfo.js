@@ -1,11 +1,11 @@
 const {ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle} = require('discord.js')
+const moment = require("moment");
+require("moment-duration-format");
 
 module.exports = {
     name: "botinfo",
-    usage: "/botinfo",
     category: "Bot",
     description: "About the bot",
-    ownerOnly: false,
     run: async (client, interaction) => {
 
         const variables = [
@@ -27,14 +27,16 @@ module.exports = {
 
         const fact = variables[Math.floor(Math.random() * variables.length)];
 
+        const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+
         const embedEn = new EmbedBuilder()
             .setThumbnail(client.user.displayAvatarURL())
-            .setTitle('About ArLet v2')
+            .setTitle('About ArLet v3')
             .addFields([
-                {name: `<:WhatTheBot:976864462164361226>  What is bot?`, value: `It\'s made for [arweave community](https://discord.gg/9CXP2H7e5N), for ease of use arweave, and the bot has its own [Open Source](https://github.com/Alexcitten/ArLetDiscordBot).`},
-                {name: `<:peoples:976851868166787082>  Guilds`, value: `${client.guilds.cache.size}`},
-                {name: `<:time:976868189449375767>  Ping`, value: `${client.ws.ping}`},
-                {name: `<:donate:976853323342815262>  Other`, value: `Bot owner: Alexcitten#0001\n Discord.js v14.2.0\n Hosting: VDS\n Used ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`}
+                {name: `<:q_:1045650172144783410>  What is bot?`, value: `This unusual Discord Bot is created for the Arweave Community, for ease of transactions of AR token and smart contracts based on Arweave and other interactions, creating a semi-cold arweave wallet, balance view. There will be many things in the future`, inline: true},
+                {name: `<:f_:1045650173579235338>  Plans`, value: `[In plans](https://github.com/Alexcitten/ArLetDiscordBot#in-plans) | [The closest functionality](https://github.com/Alexcitten/ArLetDiscordBot#the-closest-functionality) | [Next update](https://github.com/Alexcitten/ArLetDiscordBot#next-update)`, inline: true},
+                {name: `<:t_:1045650175080812594>  Stats`, value: `Guilds: **${client.guilds.cache.size}**\n Ping: **${client.ws.ping}**\n Memory: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB / 64 GB** | Dedicated Server Hosting\n Uptime: **${duration}**`},
+                {name: `<:c_:1045650170370588674>  Other`, value: `By <a:alexciten_avatar:1045646847328399370> [Alexcitten#0001](https://alexcitten.dev/) | Discord.JS v14.2.0 | **[Open-Source](https://github.com/Alexcitten/ArLetDiscordBot)**`}
             ])
             .setColor('#FF8747')
             .setFooter({ 
@@ -45,10 +47,22 @@ module.exports = {
             const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                .setLabel('RU')
+                .setLabel('UA')
                 .setCustomId('info')
                 .setStyle(ButtonStyle.Secondary)
-                .setEmoji('1006668429031379054')
+                .setEmoji('1047087115474841700'),
+
+                new ButtonBuilder()
+                .setLabel('Website')
+                .setURL('https://arlet.tech')
+                .setStyle(ButtonStyle.Link)
+                .setEmoji('1047087115474841700'),
+
+                new ButtonBuilder()
+                .setLabel('Docs')
+                .setURL('https://arlet.gitbook.io/docs/')
+                .setStyle(ButtonStyle.Link)
+                .setEmoji('1047087115474841700')
             )
 
         await interaction.reply({
