@@ -2,31 +2,37 @@ const {ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle} = require('di
 
 module.exports = {
     name: "help",
-    usage: '/help',
     category: "Bot",
     description: "List commands",
-    ownerOnly: false,
     run: async (client, interaction, args) => {
 
         const embed = new EmbedBuilder()
         .setTitle(`Commands`)
         .addFields([
-            {name: `<:donate:976853323342815262>  Wallet`, value: `❯ /createwallet - **Create AR wallet**\n ❯ /balance <AR 43-symbol wallet address> - **Check balance**\n ❯ /arsend <AR 43-symbol wallet address>, <quantity AR>, <JSON Key File AR wallet> - **Send AR**\n ❯ /ardrivesend <AR 43-symbol wallet address>, <quantity ANO>, <JSON Key File AR wallet> - **Send smart-token ArDrive**`},
-            {name: `<:addbot:976851455355015178>  Other`, value: `❯ /help - **List commands**\n ❯ /botinfo - **About the bot**\n ❯ /invite - **Useful links**\n ❯ /arweave - **About Arweave**`}
+            {name: `<:wallet:1047085806696808538>  Wallet`, value: `❯ \`/createwallet\` - **Create AR wallet**\n ❯ \`/balance\` - **Check balance**\n ❯ \`/arsend\` - **Send AR**\n ❯ \`/ardrivesend\` - **Send smart-token ArDrive**`, inline: true},
+            {name: `<:dac:1047085787864379392>  Other`, value: `❯ \`/help\` - **List commands**\n ❯ \`/botinfo\` - **About the bot**\n ❯ \`/invite\` - **Useful links**\n ❯ \`/arweave\` - **About Arweave**`, inline: true}
         ])
         .setColor('#FF8747')
-        .setFooter({
-            text: 'ArLet v2',
-            iconURL: 'https://cdn.discordapp.com/emojis/712228732387196958.webp?size=240&quality=lossless'
-        });
 
         const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                .setLabel('RU')
+                .setLabel('UA')
                 .setCustomId('helpmecap')
                 .setStyle(ButtonStyle.Secondary)
-                .setEmoji('1006668429031379054')
+                .setEmoji('1047087115474841700'),
+
+                new ButtonBuilder()
+                .setLabel('Website')
+                .setURL('https://arlet.tech')
+                .setStyle(ButtonStyle.Link)
+                .setEmoji('1047087115474841700'),
+
+                new ButtonBuilder()
+                .setLabel('Docs')
+                .setURL('https://arlet.gitbook.io/docs/')
+                .setStyle(ButtonStyle.Link)
+                .setEmoji('1047087115474841700')
             )
 
         await interaction.reply({ 
@@ -36,3 +42,4 @@ module.exports = {
         });
     },
 };
+
