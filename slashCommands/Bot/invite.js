@@ -2,10 +2,8 @@ const {ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle} = require('di
 
 module.exports = {
     name: "invite",
-    usage: "/invite",
     category: "Bot",
     description: "Useful links",
-    ownerOnly: false,
     run: async (client, interaction) => {
 
         const variables = [
@@ -13,7 +11,7 @@ module.exports = {
             "Arweave is a protocol that allows you to store data permanently, sustainably, with a single upfront fee.", 
             "Arweave transaction signatures are a cryptographic way to prove that a public and private key pair is the true originator of the transaction.", 
             "An RSA signature is a 512byte key, but when we take the SHA-256 hash of that, we get the transaction id. This means it\’s not possible to know a transaction's id until it\’s been signed.", 
-            "Arweave.app is a web wallet, which means it\’s just some code running in another tab in your browser.", 
+            "Arweave.app is a web wallet, which means it\’s just some code running in ARDRIVEther tab in your browser.", 
             "Profit sharing tokens (PSTs) are a simple mechanism built using SmartWeave that shares the proceeds of any revenue stream on the permaweb.", 
             "By minting a profit sharing token for a revenue stream, users and developers are able to trade proportions of future profit from the assets by trading the profit sharing token itself.", 
             "Gateways are the mechanism through which users view content on the the permaweb, allowing users to point their unmodified web browser to a transaction ID in the Arweave network and have the content rendered locally.",
@@ -28,28 +26,26 @@ module.exports = {
         const fact = variables[Math.floor(Math.random() * variables.length)];
 
         const embed = new EmbedBuilder()
-            .setThumbnail(client.user.displayAvatarURL())
             .setTitle('Useful links')
             .addFields([
-                {name: `<:WhatTheBot:976864462164361226>  Website`, value: `[Go →](https://alexcitten.ml/arlet)`},
-                {name: `<:addbot:976851455355015178>  Add bot`, value: `[Go →](https://discord.com/oauth2/authorize?client_id=631868778074079245&permissions=277025704960&scope=bot%20applications.commands)`},
-                {name: `<:peoples:976851868166787082>  Discord server`, value: `[Go →](https://discord.gg/jNKWTx7AJp)`},
-                {name: `<:up:976858697361920082>  Rate bot`, value: `[Go →](https://bots.server-discord.com/631868778074079245)`},
-                {name: `<:donate:976853323342815262>  Donate`, value: `[MetaMask](https://metamask.io) 0x996Ed13D3C3695Ecea397e44cC3f16fd501e48a9 or [DonationAlerts](https://www.donationalerts.com/r/alexcitten)`}
+                {name: `<:web:1047492748539854858>  Website`, value: `[Go →](https://arlet.tech)`, inline: true},
+                {name: `<:addbot:1047492704352878733>  Add Bot`, value: `[Go →](https://discord.com/oauth2/authorize?client_id=631868778074079245&permissions=277025704960&scope=bot%20applications.commands)`, inline: true},
+                {name: `<:dserver:1047492729430626384>  Discord Server`, value: `[Go →](https://discord.gg/frZ9KAGgnG)`, inline: true},
+                {name: `<:donate:1047492716474400798>  Donate`, value: `Arweave: \`0hw0sQxeBSPnpQ1dL4pjKGOqlIZnFuCWryNXl34o2bo\` or [money](https://alexcitten.diaka.ua/donate)`, inline: true}
             ])
             .setColor('#FF8747')
             .setFooter({ 
-                text: `About bot: /botinfo | Did you know: ${fact}`, 
+                text: `About the bot: /botinfo | Did you know: ${fact}`, 
                 iconURL: `${client.user.displayAvatarURL()}` 
             });
 
             const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                .setLabel('RU')
+                .setLabel('UA')
                 .setCustomId('links')
                 .setStyle(ButtonStyle.Secondary)
-                .setEmoji('1006668429031379054')
+                .setEmoji('1047087115474841700')
             )
 
         return interaction.reply({
