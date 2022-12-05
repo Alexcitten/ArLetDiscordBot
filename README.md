@@ -32,7 +32,6 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * [Fully](https://github.com/jfbeats/ArweaveWalletConnectorNode) security using [arweave.app](https://arweave.app)
 
 ## Next update
-* Upload data to Arweave
 * [HandShake](https://hsd-dev.org/) functionality support
 * Interact with [Stargaze](https://stargaze.zone)
 
