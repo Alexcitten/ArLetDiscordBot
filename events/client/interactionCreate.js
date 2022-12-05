@@ -56,7 +56,7 @@ module.exports = {
 
         const embedUaInfo = new EmbedBuilder()
             .setThumbnail(client.user.displayAvatarURL())
-            .setTitle('О ArLet | v2')
+            .setTitle('О ArLet v3')
             .addFields([
                 {name: `<:q_:1045650172144783410>  Що це за бот?`, value: `Цей незвичайний Discord бот створений для спільноти Arweave, для спрощення транзакцій токена AR та смарт-контрактів на основі Arweave та інших взаємодій, створення напівхолодного гаманця arweave, перегляду балансу. У майбутньому буде багато нового функціоналу`, inline: true},
                 {name: `<:f_:1045650173579235338>  Плани`, value: `[В планах](https://github.com/Alexcitten/ArLetDiscordBot#in-plans) | [Найближчий функціонал](https://github.com/Alexcitten/ArLetDiscordBot#the-closest-functionality) | [Наступне оновлення](https://github.com/Alexcitten/ArLetDiscordBot#next-update)`, inline: true},
