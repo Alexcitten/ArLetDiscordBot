@@ -58,3 +58,4 @@ node index.js
 * [RedStone API](https://www.npmjs.com/package/redstone-api) - For real-time AR pricing
 * [axios](https://www.npmjs.com/package/axios) - To calculate the price of 1 GB in AR
 * [moment](https://www.npmjs.com/package/moment) & [moment-duration-format](https://www.npmjs.com/package/moment-duration-format) - For bot uptime
+* [node-html-parser](https://www.npmjs.com/package/node-html-parser) - For /uploaddata
