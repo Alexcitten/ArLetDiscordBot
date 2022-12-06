@@ -35,6 +35,9 @@ module.exports = {
                 })
             } else {
 
+                interaction.editReply({
+                    content: `Give me time to count and think :thinking:`
+                })
             const warp = WarpFactory.forMainnet();
                 let txId = await warp.contract(config.ardriveContract).connect(jwk).viewState({
                     function: "balance",
@@ -64,9 +67,9 @@ module.exports = {
                 iconURL: `${client.user.displayAvatarURL()}` 
             });
 
-        return interaction.editReply({ 
-            embeds: [embed], 
-            ephemeral: true 
+        return interaction.followUp({ 
+            embeds: [embed],
+            ephemeral: true
         });     
      }); 
     });
