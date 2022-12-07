@@ -3,6 +3,7 @@ const { WarpFactory } = require("warp-contracts");
 const config = require("../../config.json")
 const redstone = require('redstone-api');
 const jwk = require('../../jwk.json') // idc about this wallet
+const {LmdbCache} = require("warp-contracts-lmdb");
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
@@ -38,11 +39,22 @@ module.exports = {
                 interaction.editReply({
                     content: `Give me time to count and think :thinking:`
                 })
-            const warp = WarpFactory.forMainnet();
+
+                const warp = WarpFactory
+                .forMainnet()
+                .useStateCache(new LmdbCache({
+                    dbLocation: `./cache/warp/state`
+                  }
+                ))
+                .useContractCache(new LmdbCache({
+                    dbLocation: `./cache/warp/contracts`
+                }));
+
                 let txId = await warp.contract(config.ardriveContract).connect(jwk).viewState({
                     function: "balance",
                     target: interaction.options.getString("address")
                 })
+
 
             arweave.wallets.getBalance(interaction.options.getString("address")).then((balance) => {
                 const ar = arweave.ar.winstonToAr(balance);
