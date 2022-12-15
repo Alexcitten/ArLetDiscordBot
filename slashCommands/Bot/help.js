@@ -4,7 +4,7 @@ module.exports = {
     name: "help",
     category: "Bot",
     description: "List commands",
-    run: async (client, interaction, args) => {
+    run(client, interaction, args) {
 
         const embed = new EmbedBuilder()
         .setTitle(`Commands`)
@@ -35,11 +35,10 @@ module.exports = {
                 .setEmoji('1047087115474841700')
             )
 
-        await interaction.reply({ 
+        return interaction.reply({ 
             embeds: [embed],
             ephemeral: true,
             components: [row]
         });
     },
 };
-
