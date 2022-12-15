@@ -6,7 +6,7 @@ module.exports = {
     name: "arweave",
     category: "Arweave",
     description: "About Arweave",
-    run: async(client, interaction, args) => {
+    async run(client, interaction, args) {
 
         async function getCurrentARPricePerGB() {
             const response = await axios.get("https://arweave.net/price/1073741824");
@@ -51,3 +51,4 @@ module.exports = {
         });     
   }
  }
+
