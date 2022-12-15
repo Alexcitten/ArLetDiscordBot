@@ -29,7 +29,7 @@ module.exports = {
     ],
     category: "AR Wallet",
     description: "Send smart-token ARDRIVE",
-    run: async (client, interaction, args) => {
+    async run(client, interaction, args) {
 
         await interaction.deferReply({ephemeral: true});
 
