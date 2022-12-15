@@ -21,7 +21,7 @@ module.exports = {
     ],
     category: "AR Wallet",
     description: "Upload data to main network Arweave",
-    run: async (client, interaction, args) => {
+    async run(client, interaction, args) {
 
         const arweave = Arweave.init({
             host: 'arweave.net',
