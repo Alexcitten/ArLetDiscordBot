@@ -6,7 +6,7 @@ module.exports = {
     name: "botinfo",
     category: "Bot",
     description: "About the bot",
-    run: async (client, interaction) => {
+    run(client, interaction) {
 
         const variables = [
             "The bot owner dog is called Siri",
@@ -65,7 +65,7 @@ module.exports = {
                 .setEmoji('1047087115474841700')
             )
 
-        await interaction.reply({
+        return interaction.reply({
             embeds: [embedEn],
             ephemeral: true,
             components: [row]
