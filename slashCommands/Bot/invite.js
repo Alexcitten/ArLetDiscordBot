@@ -4,7 +4,7 @@ module.exports = {
     name: "invite",
     category: "Bot",
     description: "Useful links",
-    run: async (client, interaction) => {
+    run (client, interaction) {
 
         const variables = [
             "The bot owner dog is called Siri",
@@ -31,7 +31,7 @@ module.exports = {
                 {name: `<:web:1047492748539854858>  Website`, value: `[Go →](https://arlet.tech)`, inline: true},
                 {name: `<:addbot:1047492704352878733>  Add Bot`, value: `[Go →](https://discord.com/oauth2/authorize?client_id=631868778074079245&permissions=277025704960&scope=bot%20applications.commands)`, inline: true},
                 {name: `<:dserver:1047492729430626384>  Discord Server`, value: `[Go →](https://discord.gg/frZ9KAGgnG)`, inline: true},
-                {name: `<:donate:1047492716474400798>  Donate`, value: `Arweave: \`0hw0sQxeBSPnpQ1dL4pjKGOqlIZnFuCWryNXl34o2bo\` or [money](https://www.buymeacoffee.com/alexcitten)`, inline: true}
+                {name: `<:donate:1047492716474400798>  Donate`, value: `Arweave: \`0hw0sQxeBSPnpQ1dL4pjKGOqlIZnFuCWryNXl34o2bo\` or [money](https://alexcitten.diaka.ua/donate)`, inline: true}
             ])
             .setColor('#FF8747')
             .setFooter({ 
