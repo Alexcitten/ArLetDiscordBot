@@ -5,7 +5,7 @@ module.exports = {
     name: "createwallet",
     category: "AR Wallet",
     description: "Create AR wallet",
-    run: async (client, interaction, args) => {
+    async run(client, interaction, args) {
 
         const arweave = Arweave.init({
             host: 'arweave.net',
