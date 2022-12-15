@@ -18,7 +18,7 @@ module.exports = {
     ],
     category: "AR Wallet",
     description: "Check AR and smart-contracts balance",
-    run: async (client, interaction, args) => {
+    async run(client, interaction, args) {
 
         const arweave = Arweave.init({
              host: 'arweave.net',
