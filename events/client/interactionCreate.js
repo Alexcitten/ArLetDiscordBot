@@ -107,14 +107,14 @@ module.exports = {
             )
 
         if(interaction.customId === 'info') {
-            await interaction.reply({
+            return interaction.reply({
                 embeds: [embedUaInfo],
                 ephemeral: true
            })
         }
 
         if(interaction.customId === 'helpmecap') {
-            await interaction.reply({
+            return interaction.reply({
                 embeds: [embedUaHelp],
                 ephemeral: true,
                 components: [helprow]
@@ -122,14 +122,14 @@ module.exports = {
         }
 
         if(interaction.customId === 'arua') {
-            await interaction.reply({
+            return interaction.reply({
                 embeds: [embedUaAr],
                 ephemeral: true
            })
         }
 
         if(interaction.customId === 'links') {
-            await interaction.reply({
+            return interaction.reply({
                 embeds: [embedUaLinks],
                 ephemeral: true
            })
