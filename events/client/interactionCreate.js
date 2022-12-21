@@ -1,6 +1,9 @@
 const redstone = require('redstone-api');
 const axios = require("axios");
 const {ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle} = require('discord.js')
+const moment = require("moment");
+require("moment-duration-format");
+
 module.exports = {
     name: 'interactionCreate',
 
@@ -17,6 +20,7 @@ module.exports = {
           const usdPricePerGB = arPricePerGB * priceFeed.value;
           const usdPricePerGBFormatted = +usdPricePerGB.toFixed(2);
 
+          const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
 
        const embedUaAr = new EmbedBuilder()
        .setTitle('Ознайомлення з Arweave')
@@ -60,7 +64,7 @@ module.exports = {
             .addFields([
                 {name: `<:q_:1045650172144783410>  Що це за бот?`, value: `Цей незвичайний Discord бот створений для спільноти Arweave, для спрощення транзакцій токена AR та смарт-контрактів на основі Arweave та інших взаємодій, створення напівхолодного гаманця arweave, перегляду балансу. У майбутньому буде багато нового функціоналу`, inline: true},
                 {name: `<:f_:1045650173579235338>  Плани`, value: `[В планах](https://github.com/Alexcitten/ArLetDiscordBot#in-plans) | [Найближчий функціонал](https://github.com/Alexcitten/ArLetDiscordBot#the-closest-functionality) | [Наступне оновлення](https://github.com/Alexcitten/ArLetDiscordBot#next-update)`, inline: true},
-                {name: `<:t_:1045650175080812594>  Статистика`, value: `Серверів: **${client.guilds.cache.size}**\n Пінг: **${client.ws.ping}**\n Пам'ять: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}** МБ / 64 ГБ | Хостинг на виділеному сервері`},
+                {name: `<:t_:1045650175080812594>  Статистика`, value: `Серверів: **${client.guilds.cache.size}**\n Пінг: **${client.ws.ping}**\n Пам'ять: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}** МБ / 64 ГБ | Хостинг на виділеному сервері\n Час роботи: **${duration}**``},
                 {name: `<:c_:1045650170370588674>  Інше`, value: `От <a:alexciten_avatar:1045646847328399370> [Alexcitten#0001](https://alexcitten.dev/) | Discord.JS v14.2.0 | **[Вихідний код](https://github.com/Alexcitten/ArLetDiscordBot)**`}
             ])
             .setColor('#FF8747')
