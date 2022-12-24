@@ -1,6 +1,6 @@
 # [ArLet — Discord Bot | 1400+ guilds](https://arlet.tech)
 
-This unusual Discord-bot is created to simplify interaction with [Arweave](https://arweave.org) and [Handshake](https://handshake.org), very soon there will be support for Bitcoin, with transactions and other things.
+This unusual Discord-bot is created to simplify interaction with [Arweave](https://arweave.org) and [Handshake](https://handshake.org), very soon there will be support for Bitcoin, with transactions, there will be a DNS Handshake domain setup via Discord commands and other things.
 
 This is far from all the functionality, because the bot was planned to be originally with extensive functionality, support for Bitcoin, Cosmos(ATOM), HNS, and so on, also provide cryptocurrency electronic commerce: buying, selling, and bidding on any cryptogood at Opensea API (and we already have the key to the API)
 
@@ -51,7 +51,7 @@ node index.js
 ## Built With
 
 * [arweave](https://www.npmjs.com/package/arweave) - Interact with Arweave
-* [Warp Contracts](https://github.com/warp-contracts/warp) - Smart Contracts
+* [Warp Contracts](https://github.com/warp-contracts/warp) - Arweave Smart Contracts
 * [discord.js v14](https://discord.js.org/#/) - This is what most bots rely on.
 * [chalk](https://www.npmjs.com/package/chalk) - Just output to the console, beautiful.
 * [node-fetch](https://www.npmjs.com/package/node-fetch) - It is used in arsend & ardrivesend commands for Key File
@@ -59,3 +59,4 @@ node index.js
 * [axios](https://www.npmjs.com/package/axios) - To calculate the price of 1 GB in AR
 * [moment](https://www.npmjs.com/package/moment) & [moment-duration-format](https://www.npmjs.com/package/moment-duration-format) - For bot uptime
 * [node-html-parser](https://www.npmjs.com/package/node-html-parser) - For /uploaddata
+* [HSD](https://www.npmjs.com/package/hsd) & [hs-client](https://www.npmjs.com/package/hs-client) - Interact with Handshake
