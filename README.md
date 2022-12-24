@@ -1,6 +1,6 @@
-# [ArLet — Discord Bot | 1450+ guilds](https://arlet.tech)
+# [ArLet — Discord Bot | 1400+ guilds](https://arlet.tech)
 
-This unusual Discord-bot is created for the Arweave Community, for ease of transactions of AR token and smart contracts based on Arweave and other interactions, creating a semi-cold arweave wallet, balance view and more!
+This unusual Discord-bot is created to simplify interaction with [Arweave](https://arweave.org) and [Handshake](https://handshake.org), very soon there will be support for Bitcoin, with transactions and other things.
 
 This is far from all the functionality, because the bot was planned to be originally with extensive functionality, support for Bitcoin, Cosmos(ATOM), HNS, and so on, also provide cryptocurrency electronic commerce: buying, selling, and bidding on any cryptogood at Opensea API (and we already have the key to the API)
 
@@ -17,7 +17,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 
 * Track various metrics in real time.
 * Finding the right information on [ArWiki](https://arwiki.wiki/#/en)
-* Support for BTC, [HNS](https://hsd-dev.org/), Cosmos(ATOM) and similar cryptocurrencies
+* Support for BTC, Cosmos(ATOM) and similar cryptocurrencies
 * OpenSea API; buying, selling, and bidding on any cryptogood.
 
 ## The closest functionality
@@ -32,7 +32,7 @@ This code is provided for study, and it is sitting right now in the present ArLe
 * [Fully](https://github.com/jfbeats/ArweaveWalletConnectorNode) security using [arweave.app](https://arweave.app)
 
 ## Next update
-* [HandShake](https://hsd-dev.org/) functionality support
+* Bitcoin functionality support
 * Interact with [Stargaze](https://stargaze.zone)
 
 #### All planned functionality will appear gradually
