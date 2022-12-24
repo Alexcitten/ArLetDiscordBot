@@ -1,12 +1,24 @@
 const {ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle} = require('discord.js')
 const moment = require("moment");
 require("moment-duration-format");
+const {NodeClient} = require('hs-client');
+const {Network} = require('hsd');
+const network = Network.get('main');
 
 module.exports = {
     name: "botinfo",
     category: "Bot",
     description: "About the bot",
-    run(client, interaction) {
+    async run(client, interaction) {
+
+        const clientOptions = {
+            port: network.rpcPort,
+            apiKey: 'arlet-api-key'
+          }
+          
+          const HSDclient = new NodeClient(clientOptions);
+
+          const hsdresult = await HSDclient.execute('getconnectioncount');
 
         const variables = [
             "The bot owner dog is called Siri",
@@ -31,11 +43,11 @@ module.exports = {
 
         const embedEn = new EmbedBuilder()
             .setThumbnail(client.user.displayAvatarURL())
-            .setTitle('About ArLet v3')
+            .setTitle('About ArLet v4')
             .addFields([
-                {name: `<:q_:1045650172144783410>  What is bot?`, value: `This unusual Discord Bot is created for the Arweave Community, for ease of transactions of AR token and smart contracts based on Arweave and other interactions, creating a semi-cold arweave wallet, balance view. There will be many things in the future`, inline: true},
+                {name: `<:q_:1045650172144783410>  What is bot?`, value: `This bot is designed to interact with Arweave, HandShake, Stargaze and there will be many more features in the future. For many, this bot is useful in functionality and interesting.`, inline: true},
                 {name: `<:f_:1045650173579235338>  Plans`, value: `[In plans](https://github.com/Alexcitten/ArLetDiscordBot#in-plans) | [The closest functionality](https://github.com/Alexcitten/ArLetDiscordBot#the-closest-functionality) | [Next update](https://github.com/Alexcitten/ArLetDiscordBot#next-update)`, inline: true},
-                {name: `<:t_:1045650175080812594>  Stats`, value: `Guilds: **${client.guilds.cache.size}**\n Ping: **${client.ws.ping}**\n Memory: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB / 64 GB** | Dedicated Server Hosting\n Uptime: **${duration}**`},
+                {name: `<:t_:1045650175080812594>  Stats`, value: `Guilds: **${client.guilds.cache.size}**\n Ping: **${client.ws.ping}**\n Memory: **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB / 64 GB** | Dedicated Server Hosting\n Uptime: **${duration}**\n HSD Connections: **${hsdresult}**`},
                 {name: `<:c_:1045650170370588674>  Other`, value: `By <a:alexciten_avatar:1045646847328399370> [Alexcitten#0001](https://alexcitten.dev/) | Discord.JS v14.2.0 | **[Open-Source](https://github.com/Alexcitten/ArLetDiscordBot)**`}
             ])
             .setColor('#FF8747')
