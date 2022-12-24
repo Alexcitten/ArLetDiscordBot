@@ -20,12 +20,10 @@
     "hsd": "^4.0.1",
     "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
-    "namebasejs": "^1.2.0",
     "node-fetch": "^2.6.1",
     "node-html-parser": "^6.1.4",
     "node-lmdb": "^0.9.7",
     "redstone-api": "^0.4.11",
-    "regtest": "^0.0.3",
     "warp-contracts": "^1.2.13",
     "warp-contracts-lmdb": "^1.1.5"
   }
