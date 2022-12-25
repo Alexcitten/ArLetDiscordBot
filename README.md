@@ -1,8 +1,8 @@
 # [ArLet — Discord Bot | 1400+ guilds](https://arlet.tech)
 
-This unusual Discord-bot is created to simplify interaction with [Arweave](https://arweave.org) and [Handshake](https://handshake.org), very soon there will be support for Bitcoin, with transactions, there will be a DNS Handshake domain setup via Discord commands and other things.
+This unusual Discord Bot is created to simplify interaction with [Arweave](https://arweave.org) and [Handshake](https://handshake.org), very soon there will be support for Bitcoin, with transactions, there will be a DNS Handshake domain setup via Discord commands and other things.
 
-This is far from all the functionality, because the bot was planned to be originally with extensive functionality, support for Bitcoin, Cosmos(ATOM), HNS, and so on, also provide cryptocurrency electronic commerce: buying, selling, and bidding on any cryptogood at Opensea API (and we already have the key to the API)
+This is far from all the functionality, because the bot was planned to be originally with extensive functionality, support for Bitcoin, Cosmos(ATOM), and so on, also provide cryptocurrency electronic commerce: buying, selling, and bidding on any cryptogood at Opensea API (and we already have the key to the API)
 
 The purpose of the ArLet in Discord — open a new sphere of functionality with a unique implementation that we plan with cryptocurrencies and smart contracts and simplify use the Discord users with these cryptocurrencies and tokens. As you know, the current functionality is far from the end! We want to go far as we can.
 
