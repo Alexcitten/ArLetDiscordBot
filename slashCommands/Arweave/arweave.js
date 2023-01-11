@@ -372,7 +372,7 @@ if(interaction.options._subcommand === 'ardrivesend') {
  }
 }
 
-if(interaction.options._subcommand === 'arsend') {
+if(interaction.options._subcommand === 'uploaddata') {
     await interaction.deferReply({ephemeral: true});
 
     const keyName = interaction.options.getAttachment("wallet").name
